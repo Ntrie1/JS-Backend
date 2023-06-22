@@ -1,0 +1,86 @@
+<!-- Details Page -->
+<section id="catalog-section">
+
+    <h1 class="item">
+        Fishing Boat
+        {{#if isAuthenticated}}
+        {{#if isCreator}}
+        <div class="f-right">
+            <a class="action pad-small f-left" href="/auctions/{{auction._id}}/edit">Edit</a>
+            <a class="action pad-small f-left" href="/auctions/{{auction._id}}/delete">Delete</a>
+        </div>
+        {{/if}}
+        {{/if}}
+    </h1>
+    <div class="item padded">
+
+        <div class="layout right large">
+
+            <div class="col">
+                <img src="{{auction.image}}" class="img-large">
+            </div>
+
+            <div class="content pad-med">
+
+                <p>In category: <strong>{{auction.category}}</strong></p>
+                <p>{{auction.description}}</p>
+
+                <div class="align-center">
+                    <div>
+                        Current price: $<strong>{{auction.price}}</strong>
+                    </div>
+
+                    {{#if isAuthenticated}}
+
+
+                    {{#unless isCreator}}
+                    {{#unless hasBidded}}
+                    <!-- If current user can place a bid -->
+                    <form class="vertical" method="POST">
+                        <label><span>Bid amount</span><input type="number" name="price"></label>
+                        <input class="action" type="submit" value="Place bid">
+                    </form>
+                    {{/unless}}
+                    {{/unless}}
+                    <!-- If current user is the bidder -->
+                    <div>
+                        {{#if isCreator}}
+                        {{#if bidder}}
+                        Bid by
+                        {{#each bidder}}
+                        <strong>{{firstName}} {{lastName}}</strong>
+                        {{/each}}
+                        {{else}}
+                        <!-- If there are no bids -->
+                        No bids
+                        {{/if}}
+                        {{/if}}
+
+                        <!-- # Bonus: If there is a bidder -->
+
+                          {{#if bidder}}
+                          {{#if isCreator}}
+                                    <a class="action pad-med cta" href="/auctions/{{auction._id}}close">Close Auction</a>
+                                    
+                                    {{/if}}
+                                    {{/if}}
+
+
+                        {{#if bidder}}
+                        {{#unless isCreator}}
+                        You are currently the <strong>highest bidder</strong> for this auction
+                        {{/unless}}
+                        {{/if}}
+                    </div>
+
+                    {{/if}}
+
+                </div>
+
+            </div>
+        </div>
+
+        <footer>Listed by {{user.firstName}} {{user.lastName}}</footer>
+    </div>
+
+</section>
