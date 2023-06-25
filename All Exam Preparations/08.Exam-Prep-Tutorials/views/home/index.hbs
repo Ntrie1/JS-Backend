@@ -1,0 +1,68 @@
+    <main>
+            <h1 class="text-center">Courses</h1>
+            <section>
+                <a href="/courses/create" class="btn btn-warning ">Create Course</a>
+                {{#if isAuthenticated}}
+                <form class="search float-right">
+                    <label>Search: </label>
+                    <input type="text">
+                    <input type="submit" class="btn btn-primary" value="Search">
+                </form>
+                {{/if}}
+            </section>
+
+            <div class="container mt-3">
+                <div class="row ">
+
+                    <div class="card-deck d-flex justify-content-center">
+
+                        {{#if isAuthenticated}}
+                        {{#each dateSortedCourses}}
+                        <div class="card mb-4">
+                            <img class="card-img-top"
+                                src="{{image}}"
+                                alt="Card image cap" width="400">
+                            <div class="card-body">
+                                <h4 class="card-title">{{title}}</h4>
+                            </div>
+                            <div class="card-footer">
+                                <a href="/courses/{{_id}}/details"><button type="button" class="btn btn-primary">Details</button></a>
+                                <small class="float-right">{{createdAt}}</small>
+                            </div>
+                        </div>
+                        {{/each}}
+
+{{else}}
+
+{{#each recentCourses}}
+ <div class="card mb-4">
+                            <img class="card-img-top"
+                                src="{{image}}"
+                                alt="Card image cap" width="400">
+                            <div class="card-body">
+                                <h4 class="card-title">{{title}}</h4>
+                            </div>
+                            <div class="card-footer">
+                                <small class="float-right">{{usersEnrolled.length}}</small>
+                            </div>
+                        </div>
+                        {{/each}}
+
+
+                        {{/if}}
+                  
+
+            
+                        
+                    </div>
+                </div>
+            </div>
+              {{#unless recentCourses}}
+                <h3 class="text-center">No courses...</h3>
+                    {{/unless}}
+
+                     {{#unless dateSortedCourses}}
+                <h3 class="text-center">No courses...</h3>
+                    {{/unless}}
+          
+        </main>
