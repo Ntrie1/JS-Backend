@@ -1,0 +1,149 @@
+header {
+    background: rgb(0, 128, 182);
+    background: linear-gradient(0deg, rgba(0, 128, 182, 1) 0%, rgba(0, 128, 182, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+header ul {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 75%;
+    margin: auto;
+}
+
+header ul span {
+    color: white;
+    padding: 0.5em;
+}
+
+.mini-navbar ul {
+    border: 1px solid #00d4ff;
+    border-radius: 0.3em;
+    padding-left: 0;
+    width: 100%;
+}
+
+header li {
+    list-style: none;
+    margin: .35em;
+    padding: 0 .95em;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+nav {
+    border-top: 1px solid #00acf4;
+}
+
+.logo {
+    font-size: 1.3em;
+    color: white;
+    padding-bottom: 0;
+}
+
+.logo-wrap {
+    font-family: 'Parisienne', cursive;
+    letter-spacing: .5em;
+    margin: 0.5em 0;
+}
+
+.mini-navbar-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    margin: auto;
+}
+
+.mini-navbar ul {
+    background-color: #6ba1b8;
+    border-radius: 5px;
+}
+
+.mini-navbar ul li+li {
+    border-left: 1px solid lightgrey;
+    padding-left: .5em;
+}
+
+/* typoghraphy */
+html {
+    font: 18px/1.5 Verdana, sans-serif;
+}
+
+body, form, input, textarea, option, select, button {
+    font: inherit;
+}
+
+ul, ol {
+    padding-bottom: 1.5em;
+}
+
+ul, ol {
+    padding-left: 2.5em;
+}
+
+blockquote, h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding-bottom: 0.5rem;
+    padding-top: 1.5rem;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 2.6em;
+}
+
+h2 {
+    font-size: 2.0em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+h4 {
+    font-size: 1.4em;
+}
+
+h5 {
+    font-size: 1.2em;
+}
+
+h6 {
+    font-size: 1.0em;
+}
+
+p+h1, p+h2, p+h3, p+h4, p+h5, p+h6 {
+    padding-top: 0.5em;
+}
+
+blockquote {
+    padding: 0 2.5em;
+    border-left: 2px solid #000000;
+    font-family: Georgia, serif;
+    margin-bottom: 1.5em;
+}
+
+blockquote, p {
+    font-style: italic;
+}
+
+blockquote p+p {
+    padding-top: 1.5em;
+}
+
+blockquote p:last-child {
+    padding-bottom: 0;
+}
+
+blockquote p.author {
+    text-align: right;
+}
